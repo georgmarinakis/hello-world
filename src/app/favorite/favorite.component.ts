@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FavoriteComponent implements OnInit {
   
-  isFavorite: boolean; //  take it from server
+  isFavorite: boolean; // take it from server
 
   // Αν η this.isFavorite = true, μολις πατηθει, θα γινει false
   onClick() {
