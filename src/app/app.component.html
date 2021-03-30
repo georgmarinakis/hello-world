@@ -1,9 +1,6 @@
 <!--<h1>Angular</h1>
 <courses></courses> 
 -->
-<favorite></favorite>   
-
-<input type="text" [(ngModel)]="title">
-<br>
-
-{{ title | titleCase }}
+<favorite [isFavorite]="post.isFavorite" (change)="onFavoriteChanged()"></favorite>   
+  
+ 
