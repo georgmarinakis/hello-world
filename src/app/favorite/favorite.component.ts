@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+//import { threadId } from 'node:worker_threads';
 
 @Component({
   selector: 'favorite',
@@ -7,11 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FavoriteComponent implements OnInit {
   
-  isFavorite: boolean; //  take it from server
+  @Input() isFavorite: boolean; //  take it from server
+
+  @Output() change = new EventEmitter();
+
 
   // Αν η this.isFavorite = true, μολις πατηθει, θα γινει false
   onClick() {
     this.isFavorite = !this.isFavorite;
+    this.change.emit({newValue: this.isFavorite});
   }
   constructor() { }
 
